@@ -14,6 +14,9 @@ async function getCityData() {
     let dataResponse = await responseLocationData.json();
     // console.log(dataResponse);
 
+    // Constraints -> Limitation in getting the city data -> Hardcoded into index 0 result only
+    // So, the data will be used is the first result that comes up when users are searching
+
     // Show city in the UI from the API
     let currentCity = document.getElementById("city-name");
     currentCity = dataResponse.results[0].name;
@@ -145,6 +148,7 @@ async function getCityData() {
       }
     }
 
+    // List down the weather code and description from Open Meteo Data
     let weatherCodeList = {
       0: "Clear sky",
       1: "Mainly clear",
@@ -176,6 +180,7 @@ async function getCityData() {
       99: "Thunderstorm with heavy hail",
     };
 
+    // List down the weather code and image src from Open Meteo Data
     let weatherImageList = {
       0: "./images/sunny.svg",
       1: "./images/mostly-cloud.svg",
@@ -207,6 +212,7 @@ async function getCityData() {
       99: "./images/hailstorm.svg",
     };
 
+    // Show the current weather image and description
     // Get DOM for weather name
     let currentWeather = document.getElementById("current-weather-condition");
     // Get DOM for weather icon
@@ -273,76 +279,9 @@ async function getCityData() {
     }
 
     console.log(weatherCodeImageData);
-
-    // Map current weather code API results to the name of the weather
-    // If weather code from the API matches with the key from weatherDataKeys, return the name and add it in the HTML;
-
-    // if (checkWeatherCodeData) {
-    //   let weatherNameData = weatherCodeList[checkWeatherCodeData];
-    //   currentWeather.innerHTML = weatherNameData;
-    // } else {
-    //   currentWeather.innerHTML = "Unknown weather condition";
-    // }
-
-    // for (let i = 0; i < weatherCode.length; i++) {
-    //   if (weatherCodeImage[i]) {
-    //     let weatherCodeData = weatherCode[i];
-    //     weatherCodeImage[i].src = weatherCodeData;
-    //   }
-    // }
   } catch (error) {
     let errorMessage = "Data not found";
     console.log(errorMessage);
   }
 }
 getCityData();
-
-// let cityData = {
-//   latitude: 52.52,
-//   longitude: 13.419998,
-//   generationtime_ms: 0.189065933227539,
-//   utc_offset_seconds: 7200,
-//   timezone: "Europe/Berlin",
-//   timezone_abbreviation: "CEST",
-//   elevation: 38,
-//   current_units: {
-//     time: "iso8601",
-//     interval: "seconds",
-//     temperature_2m: "°C",
-//     relative_humidity_2m: "%",
-//     apparent_temperature: "°C",
-//     precipitation: "mm",
-//     weather_code: "wmo code",
-//     wind_speed_10m: "km/h",
-//   },
-//   current: {
-//     time: "2024-08-21T10:30",
-//     interval: 900,
-//     temperature_2m: 19.6,
-//     relative_humidity_2m: 67,
-//     apparent_temperature: 17.8,
-//     precipitation: 0,
-//     weather_code: 3,
-//     wind_speed_10m: 20,
-//   },
-//   daily_units: {
-//     time: "iso8601",
-//     weather_code: "wmo code",
-//     temperature_2m_max: "°C",
-//     temperature_2m_min: "°C",
-//   },
-//   daily: {
-//     time: [
-//       "2024-08-21",
-//       "2024-08-22",
-//       "2024-08-23",
-//       "2024-08-24",
-//       "2024-08-25",
-//       "2024-08-26",
-//       "2024-08-27",
-//     ],
-//     weather_code: [80, 3, 80, 1, 80, 45, 2],
-//     temperature_2m_max: [22.8, 22.6, 29.4, 32.3, 24.3, 22.8, 23.6],
-//     temperature_2m_min: [15.7, 13.5, 16.2, 18.2, 16.3, 12.3, 13],
-//   },
-// };
