@@ -255,15 +255,24 @@ async function getCityData() {
     }
 
     // Get DOM for daily weather
-    let weatherCodeImage = document.querySelectorAll(".weather-code");
+    let weatherCodeImage = document.getElementsByClassName("weather-code");
     let weatherCode = cityData.daily.weather_code;
     console.log(weatherCode);
 
     // Check if weather code Image is the same with the one in the name object
 
-    let checkWeatherCode = weatherImageKeys.find(
-      (element) => parseInt(element) === weatherCode
+    let checkWeatherCode = weatherCode.map(
+      (element) => weatherImageList[element]
     );
+
+    for (let i = 0; i < checkWeatherCode.length; i++) {
+      if (weatherCodeImage[i] && checkWeatherCode[i]) {
+        let weatherCodeImageData = checkWeatherCode[i];
+        weatherCodeImage[i].src = weatherCodeImageData;
+      }
+    }
+
+    console.log(weatherCodeImageData);
 
     // Map current weather code API results to the name of the weather
     // If weather code from the API matches with the key from weatherDataKeys, return the name and add it in the HTML;
