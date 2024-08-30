@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Some Weather App</title>
+    <meta name="description" content="Mini weather widget" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/x-icon" href="./icons/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="background">
+    <search>
+      <div id="search-result">
+        <input
+          id="search-action"
+          style="text-indent: 32px"
+          type="text"
+          class="search icon-search"
+          placeholder="e.g. Jakarta, New York"
+          onkeypress="getCityData()"
+        />
+      </div>
+    </search>
+    <section class="weather-content">
+      <div class="location">
+        <div class="location-detail">
+          <img src="./icons/location.svg" />
+          <div>
+            <p class="primary-text" id="city-name">-</p>
+            <p class="secondary-text" id="timezone">GMT +0</p>
+          </div>
+        </div>
+        <div class="date-time">
+          <p class="secondary-text" id="current-date">Date</p>
+          <p class="secondary-text" id="current-time">Time</p>
+        </div>
+      </div>
+      <div class="primary-info">
+        <div class="today-forecast">
+          <img
+            src="./images/sunny.svg"
+            class="main-img"
+            id="current-weather-image"
+          />
+          <div class="today-temperature">
+            <p class="primary-data" id="current-temperature">26°</p>
+            <p class="primary-text" id="current-weather-condition">
+              Scattered Clouds
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="details">
+        <div class="secondary-info">
+          <div class="humidity">
+            <div class="horizontal-gap-s">
+              <img src="./icons/humidity.svg" />
+              <p class="meta-text">Humidity & Wind</p>
+            </div>
+            <div class="vertical-gap-xs">
+              <div class="horizontal-gap-s">
+                <img src="./icons/drop.svg" alt="Drop" />
+                <p class="tertiary-data" id="relative-humidity">62%</p>
+              </div>
+              <div class="horizontal-gap-s">
+                <img src="./icons/wind.svg" alt="Wind" />
+                <p class="tertiary-data" id="wind-speed">2.57 km/h</p>
+              </div>
+            </div>
+          </div>
+          <div class="feels-like">
+            <div class="horizontal-gap-s">
+              <img src="./icons/thermostat.svg" />
+              <p class="meta-text">Feels like</p>
+            </div>
+            <div class="vertical-gap-s">
+              <p class="primary-s-data" id="feels-like">32°</p>
+              <p class="meta-text" id="feels-like-description">
+                Humidity is making it feel warmer
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="future-day-forecast">
+          <div class="horizontal-gap-s">
+            <img src="./icons/calendar.svg" />
+            <p class="meta-text">7-day forecast</p>
+          </div>
+          <div class="forecast-data">
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Mon</p>
+              <img src="./images/mostly-cloudy.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Tue</p>
+              <img src="./images/partial-cloudy.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Wed</p>
+              <img src="./images/sunny.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Thu</p>
+              <img src="./images/light-rain.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Fri</p>
+              <img src="./images/heavy-rain.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+            <div class="forecast-card">
+              <p class="secondary-text forecast-daily">Sat</p>
+              <img src="./images/sunny.svg" class="weather-code" />
+              <div class="minmax-data">
+                <p
+                  class="secondary-data high-temp-forecast"
+                  id="max-temperature"
+                >
+                  H 32°
+                </p>
+                <p
+                  class="secondary-data min-temp-forecast"
+                  id="min-temperature"
+                >
+                  L 24°
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>

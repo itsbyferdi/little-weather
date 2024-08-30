@@ -1,0 +1,316 @@
+* {
+  /* reset the default margin for paragraph */
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px;
+  font-optical-sizing: auto;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("./fonts/regular/GeistVF.woff2") format("woff2"),
+    url("/p0-ip-itsbyferdi/fonts/regular/GeistVF.woff") format("woff"),
+    url("/p0-ip-itsbyferdi/fonts/regular/GeistVF.ttf") format ("ttf");
+  font-style: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/p0-ip-itsbyferdi/fonts/mono/GeistMonoVF.woff2") format("woff2"),
+    url("/p0-ip-itsbyferdi/fonts/mono/GeistMonoVF.woff") format("woff"),
+    url("/p0-ip-itsbyferdi/fonts/mono/GeistMonoVF.ttf") format ("ttf");
+  font-style: normal;
+  font-style: normal;
+}
+
+.background {
+  background-image: url(./images/img-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  display: flex;
+  width: 490px;
+  height: 48px;
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 1px solid #eee;
+  background: #fff;
+  backdrop-filter: blur(34px);
+  color: #272727;
+  font-family: "Geist";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+.icon-search {
+  background-image: url(./icons/magnifying-glass.svg);
+  background-repeat: no-repeat;
+  background-position: 14px 12px;
+}
+
+.weather-content {
+  display: flex;
+  width: 490px;
+  height: fit-content;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 24px;
+  border-radius: 36px;
+  background: linear-gradient(180deg, #45a5ff 0%, #3187d6 100%);
+  backdrop-filter: blur(70px);
+}
+
+.location {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.date-time {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.primary-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.main-img {
+  width: 124px;
+  height: 124px;
+  object-fit: cover;
+}
+
+.today-forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+}
+
+.today-temperature {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.humidity {
+  display: flex;
+  height: 122px;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  flex: 1 0 0;
+}
+
+.feels-like {
+  display: flex;
+  height: 122px;
+  padding: 12px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 16px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.secondary-info {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-self: stretch;
+}
+
+.future-day-forecast {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  padding: 12px 12px 16px 12px;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.forecast-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: fit-content;
+  gap: 8px;
+  flex: 1 0 0;
+}
+
+.forecast-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: stretch;
+  gap: 4px;
+}
+
+.minmax-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+
+.horizontal-gap-s {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+
+.vertical-gap-s {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vertical-gap-xs {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.details {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.low-high {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.primary-data {
+  color: #fff;
+  font-family: "Geist";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 57.6px */
+  letter-spacing: -0.48px;
+}
+
+.primary-s-data {
+  color: #fff;
+  font-family: "Geist";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 33.6px */
+  letter-spacing: -0.28px;
+}
+
+.primary-text {
+  color: #fff;
+  font-family: "Geist";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
+.secondary-data {
+  color: #fff;
+  font-family: "Geist";
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0px;
+}
+
+.tertiary-data {
+  color: #fff;
+  font-family: "Geist";
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0px;
+}
+
+.secondary-text {
+  color: #fff;
+  font-family: "Geist";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 19.2px */
+}
+
+.meta-text {
+  color: #fff;
+  font-family: "Geist";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
